@@ -1,0 +1,18 @@
+<project default="test">
+    <target name="test">
+        <taskdef name="simpleantassert" classname="SimpleAntAssert" classpath="../jar/simpleantassert.jar" />
+        <simpleantassert />
+
+        <assertequals expected="foo" actual="foo" />
+        <assertthrows>
+            <fail message="check assertthrows" />
+        </assertthrows>
+        <assertthrows >
+            <assertequals expected="foo" actual="blah" />
+        </assertthrows>
+        <assertthrows >
+            <assertthrows >
+            </assertthrows>
+        </assertthrows>
+    </target>
+</project>

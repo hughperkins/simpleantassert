@@ -1,0 +1,24 @@
+<project default="jar">
+    <target name="compile">
+        <mkdir dir="build/classes" />
+        <javac srcdir="src" destdir="build/classes" debug="true" includeantruntime="true">
+        </javac>        
+        <copy todir="build/classes" >
+            <fileset dir="src" />
+        </copy>
+    </target>
+
+    <target name="jar" depends="compile">
+        <mkdir dir="jar" />
+        <jar destfile="jar/simpleantassert.jar" basedir="build/classes" />
+    </target>
+
+    <target name="test" depends="jar">
+        <subant buildpath="test" />
+    </target>
+
+    <target name="clean">
+        <delete dir="build" />
+        <delete dir="jar" />
+    </target>
+</project>
