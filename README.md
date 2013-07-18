@@ -3,6 +3,8 @@ simpleantassert
 
 simple ant assert. provides assertequals and assertthrows tasks
 
+The advantage of this compared to the original antunit is that the asserteequals task is quite simple to use, doesn't need nested conditionals and so on.
+
 Example usage
 =============
 
